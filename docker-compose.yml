@@ -1,0 +1,29 @@
+version: '2'
+services:
+
+  tm-smb:
+    image: alexanderek/tm-smb
+    container_name: tm-smb
+    restart: always
+    ports:
+      - 445:445/tcp
+    volumes:
+      - tm-data:/tm
+    environment:
+      - TZ=Europe/Moscow
+
+  tm-avahi:
+    image: alexanderek/tm-avahi
+    container_name: tm-avahi
+    restart: always
+    network_mode: host
+    environment:
+      - TZ=Europe/Moscow
+
+volumes:
+    tm-data:
+      driver: local
+      driver_opts:
+        type: 'none'
+        o: 'bind'
+        device: '$PWD/tm-data'
