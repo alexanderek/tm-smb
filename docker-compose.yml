@@ -4,7 +4,7 @@ services:
   tm-smb:
     image: alexanderek/tm-smb
     container_name: tm-smb
-    restart: always
+    restart: unless-stopped
     ports:
       - 445:445/tcp
     volumes:
@@ -15,7 +15,7 @@ services:
   tm-avahi:
     image: alexanderek/tm-avahi
     container_name: tm-avahi
-    restart: always
+    restart: unless-stopped
     network_mode: host
     environment:
       - TZ=Europe/Moscow
