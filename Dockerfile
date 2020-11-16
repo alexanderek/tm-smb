@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.12
 LABEL maintainer="Alexander Kiselev <a@kslv.me>"
 
 RUN apk add --no-cache \
