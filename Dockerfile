@@ -15,4 +15,4 @@ VOLUME ["/tm"]
 
 EXPOSE 445/tcp
 
-ENTRYPOINT ["smbd", "--foreground", "--no-process-group", "--log-stdout"]
+ENTRYPOINT ["smbd", "--foreground", "--no-process-group", "--debug-stdout"]
